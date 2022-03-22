@@ -1,0 +1,112 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    /* border: 1px solid black; */
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-image: url(./noaa-ZVhm6rEKEX8-unsplash.jpg);
+    background-size: 100%;
+}
+
+header h1 {
+
+    font-size: 6rem;
+    color: white;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 0;
+    font-weight: 400;
+}
+header p {
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-size: 1.4rem;
+    position: relative;
+    bottom: 1.9rem;
+}
+
+main {
+    padding: 1%;
+    width: 40%;
+    height: 600px;
+}
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border-radius: 10px; 
+    background-color: hsla(0, 0%, 100%, 0.6);
+    padding: 1%;
+}
+input:first-of-type {
+    margin: .5rem auto;
+    width: 90%;
+    height: 3rem;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+input:nth-of-type(2) {
+    height: 2rem;
+    margin: .5rem auto;
+    height: 3rem;
+    width: 20%;
+    background: linear-gradient(90deg, rgba(130,204,255,1) 0%, rgba(188,135,255,1) 35%, rgba(254,147,122,1) 67%, rgba(255,235,120,1) 100%);
+    font-size: 1.4rem;
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+}
+input:nth-of-type(2):hover {
+    
+    background: linear-gradient(90deg, rgba(36,166,255,1) 0%, rgba(129,35,249,1) 35%, rgba(254,78,37,1) 67%, rgba(255,221,23,1) 100%);
+
+}
+label {
+    font-size: 1.6rem;
+    margin: 0px;
+    color: darkslategray;
+}
+
+.answer {
+    /* margin-top: 1rem; */
+    text-align: center;
+    color: darkslategray;
+    /* border: 1px solid green; */
+    background-color: white;
+    /* width: 80%; */
+    margin: 0.5rem auto;
+    border-radius: 10px;
+    padding: .5%;
+    
+}
+.answer h2{
+    margin: 0;
+    font-size: 2rem;
+}
+.answer i {
+    font-size: 5rem;
+    margin: 10px;
+} 
+
+.error {
+    background-color: hsl(0, 90%, 95%);
+    color: hsl(0, 90%, 45%);
+    border: 1px solid hsl(0, 90%, 45%);
+    border-radius: 5px;
+    padding: 1%;
+}
+
+footer {
+    background-color: white;
+    width: 100%;
+    justify-self: flex-end;
+    position: absolute;
+    bottom: 0px;
+    margin-top: 5rem;
+}
