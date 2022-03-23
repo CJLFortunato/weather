@@ -24,7 +24,7 @@
 
         if($res) {
 
-            echo "Res returned something";
+            //echo "Res returned something";
 
             $dataArray = json_decode($res, true);
 
@@ -81,7 +81,7 @@
 
     } //else {
 
-        echo "Res returned nothing";
+        //echo "Res returned nothing";
 
             $error = '<div class="error">Sorry, we couldn\'t find the city you are looking for. Check the spelling or try again later.</div>';
 
