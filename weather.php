@@ -1,6 +1,6 @@
 <?php 
-
-    error_reporting(0);
+    
+    error_reporting(2);
 
     $weather = "";
     $weatherDescription = "";
@@ -14,13 +14,17 @@
 
     if($_GET["city"]) {
 
-        $apiKey = "c52063909749e9872ab8c581e12c5796";
-
+        include "./config.php";
+       
         $address = "http://api.openweathermap.org/data/2.5/weather?q=" . $_GET["city"] . "&units=metric&appid=" . $apiKey;
 
         $res = file_get_contents($address);
 
+        echo $res;
+
         if($res) {
+
+            echo "Res returned something";
 
             $dataArray = json_decode($res, true);
 
@@ -63,19 +67,21 @@
                 }       
             }   
             
-            $display = '<div class="answer"><h2>" . $cityName . "</h2>" . 
+            $display = '<div class="answer"><h2>' . $cityName . "</h2>" . 
                  outputWeatherSymbol($weather) .
                 "<p><strong>Weather:</strong> " . $weatherDescription . "</p>".
                 "<p><strong>Temperature:</strong> " . $actualTemps . " &deg;C</p>".
                 "<p><strong>Temperature felt:</strong> " . $feltTemps . " °C</p>".
                 "<p><strong>Humidity:</strong> " . $humidity . "%</p>".
-                "<p><strong>Wind Speed:</strong> " . $windSpeedConverted . "km/h</p></div>';
+                "<p><strong>Wind Speed:</strong> " . $windSpeedConverted . "km/h</p></div>";
 
         }
 
             
 
-    } elseif($res === false) {
+    } else {
+
+        echo "Res returned nothing";
 
             $error = '<div class="error">Sorry, we couldn\'t find the city you are looking for. Check the spelling or try again later.</div>';
 
