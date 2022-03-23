@@ -1,6 +1,6 @@
 <?php 
     
-    error_reporting(2);
+    error_reporting(0);
 
     $weather = "";
     $weatherDescription = "";
@@ -20,7 +20,7 @@
 
         $res = file_get_contents($address);
 
-        echo $res;
+        //echo $res;
 
         if($res) {
 
@@ -79,13 +79,13 @@
 
             
 
-    } else {
+    } //else {
 
         echo "Res returned nothing";
 
             $error = '<div class="error">Sorry, we couldn\'t find the city you are looking for. Check the spelling or try again later.</div>';
 
-    }
+    //}
 
     
  
@@ -124,8 +124,14 @@
             <?php 
 
             // print_r($dataArray);
-            echo $error;
-            echo $display;
+
+            if ($display) {
+                 echo $display;
+            } elseif(!$display AND $_GET["city"]) {
+                echo $error;
+            }
+            
+           
 
             ?>
     </main>
