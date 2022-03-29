@@ -22,6 +22,12 @@ into it. You'll have to supply your own OpenWeather API key. You can get one for
 
 ## Changelog
 
+**29/03/2022**
+
+- Added some more icons for different types of weathers
+- Polished footer CSS
+- Tidied up file structure
+
 
 **23/03/2022**
 
@@ -33,11 +39,10 @@ into it. You'll have to supply your own OpenWeather API key. You can get one for
 - Initial commit
 
 
-
-
-
 ## To Do
 
-* Finish adding different icons for different weathers
+* ~~Finish adding different icons for different weathers~~
 * ~~debug error message~~
 * Add possibility to switch between imperial or metric units
+* Add country indicator to city name
+* Overhaul README
