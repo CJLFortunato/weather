@@ -14,7 +14,7 @@
 
     if($_GET["city"]) {
 
-        include "./config.php";
+        include "./Utils/config.php";
        
         $address = "http://api.openweathermap.org/data/2.5/weather?q=" . $_GET["city"] . "&units=metric&appid=" . $apiKey;
 
@@ -29,7 +29,7 @@
             $dataArray = json_decode($res, true);
 
             $weather = $dataArray["weather"][0]["main"];
-            //$weather = "Rain";
+            //$weather = "Torn";
             $weatherDescription = $dataArray["weather"][0]["description"];
             $actualTemps = $dataArray["main"]["temp"];
             $feltTemps = $dataArray["main"]["feels_like"];
@@ -47,23 +47,44 @@
                     case "Clear":
                         return '<i class="fas fa-sun" style="color: orange;"></i>';
                         break;
-                    case "Clouds";
+                    case "Clouds":
                         return '<i class="fas fa-cloud" style="color: lightgrey;"></i>';
                         break;
-                    case "Snow";
+                    case "Snow":
                         return '<i class="far fa-snowflake" style="color: lightsteelblue;"></i>';
                         break;
-                    case "Rain";
+                    case "Rain":
                         return '<i class="fas fa-cloud-showers-heavy" style="color: grey;"></i>';
                         break;
-                    case "Drizzle";
+                    case "Drizzle":
                         return '<i class="fas fa-cloud-rain" style="color: darkgrey;"></i>';
                         break;
-                    case "Thunderstorm";
+                    case "Thunderstorm":
                         return '<i class="fas fa-bolt" style="color: gold;"></i>';
                         break;
-                    default:
+                    case "Mist":
+                    case "Haze":
+                    case "Fog":
                         return '<i class="fas fa-smog" style="color: #D1C6DF;"></i>';
+                        break;
+                    case "Smoke":
+                        return '<i class="fas fa-fire" style="color: #92857C;"></i>';
+                        break;
+                    case "Sand":
+                    case "Dust":
+                        return '<i class="fa-solid fa-hill-rockslide" style="color: #d4ceb5;"></i>';
+                        break;
+                    case "Ash":
+                        return'<i class="fa-solid fa-volcano" style="color: orangered;"></i>';
+                        break;
+                    case "Squall":
+                        return '<i class="fa-solid fa-wind" style="color: slategrey;"></i>';
+                        break;
+                    case "Tornado":
+                        return '<i class="fa-solid fa-tornado" style="color: darkslategrey;"></i>';
+                        break;
+                    default:
+                        return '<i class="fa-solid fa-temperature-half" style="color: dodgerblue;"></i>';
                 }       
             }   
             
@@ -103,8 +124,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./normalize.css" type="text/css">
-    <link rel="stylesheet" href="./weather.css" type="text/css">
+    <link rel="stylesheet" href="./CSS/normalize.css" type="text/css">
+    <link rel="stylesheet" href="./CSS/weather.css" type="text/css">
     <title>Weather</title>
 
 </head>
@@ -136,7 +157,8 @@
             ?>
     </main>
     <footer>
-        <p>Created by CJL Fortunato using PHP and the OpenWeather API. <a href="http://www.cjlfortunato.work">Portfolio</a> <a href="https://github.com/CJLFortunato">GitHub</a></p>
+        <p>Created by CJL Fortunato using PHP and the OpenWeather API. <a href="http://www.cjlfortunato.work" style="color: rgba(129,35,249,1);">Portfolio</a> 
+        <a href="https://github.com/CJLFortunato" style="color: rgba(254,78,37,1);">GitHub</a></p>
     </footer>
 </body>
 
