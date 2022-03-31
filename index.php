@@ -15,6 +15,8 @@
     if($_GET["city"]) {
 
         include "./Utils/config.php";
+
+        $apiKey = getenv('API_KEY');
        
         $address = "http://api.openweathermap.org/data/2.5/weather?q=" . $_GET["city"] . "&units=metric&appid=" . $apiKey;
 
