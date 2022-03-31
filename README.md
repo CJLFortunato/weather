@@ -2,12 +2,14 @@
 
 A weather app made with vanilla PHP and the OpenWeather API. This is a WIP.
 
+Now live at [https://weather-php-app.herokuapp.com/](https://weather-php-app.herokuapp.com/)!
+
 ## What does it do?
 
 Type a city name, press the button and it'll give you the current weather in that city (or an error message if the name you entered was incorrect).
 
 
-**Note:** If you want to actually use the app right now, you'll have to create a config.php file in the repository and paste:
+**Note:** If you want to get the project directly on GitHub and use it locally, you'll have to create a config.php file in the repository and paste:
 
 ```
 <?php 
@@ -21,6 +23,10 @@ into it. You'll have to supply your own OpenWeather API key. You can get one for
 
 
 ## Changelog
+
+**31/03/2022**
+
+- Deployed to Heroku
 
 **29/03/2022**
 
